@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="urn:com.danko.greenhouse"
+        xmlns:tns="urn:com.danko.greenhouse"
+        elementFormDefault="qualified">
+
+    <element name="flowers" type="tns:Flowers"/>
+    <element name="flower" type="tns:Flower"/>
+    <element name="cut-flower" type="tns:CutFlower" substitutionGroup="tns:flower"/>
+    <element name="exotic-flower" type="tns:ExoticFlower" substitutionGroup="tns:flower"/>
+
+    <complexType name="Flowers">
+        <sequence>
+            <element ref="tns:flower" minOccurs="2" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Flower" abstract="true">
+        <sequence>
+            <element name="title" type="tns:Title"/>
+            <element name="origin" type="tns:Origin"/>
+            <element name="leaf-color" type="tns:Color"/>
+        </sequence>
+        <attribute name="vendor-code" type="tns:VendorCode" use="required"/>
+        <attribute name="planting-date" type="date" use="required"/>
+    </complexType>
+
+    <complexType name="CutFlower">
+        <complexContent>
+            <extension base="tns:Flower">
+                <sequence>
+                    <element name="stem-length" type="tns:StemLength"/>
+                    <element name="bud-color" type="tns:Color"/>
+                    <element name="temperature-cut" type="tns:TemperatureCut"/>
+                </sequence>
+                <attribute name="cut-date" type="date" use="required"/>
+                <attribute name="poisonous" type="boolean" use="optional" default="false"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ExoticFlower">
+        <complexContent>
+            <extension base="tns:Flower">
+                <sequence>
+                    <element name="soil" type="tns:Soil"/>
+                    <element name="multiplying" type="tns:Multiplying"/>
+                    <element name="watering" type="tns:Watering"/>
+                    <element name="temperature-exotic-flower" type="tns:TemperatureExoticFlower"/>
+                    <element name="photophilous" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="TemperatureExoticFlower">
+        <restriction base="double">
+            <minExclusive value="28"/>
+            <maxExclusive value="35"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Watering">
+        <restriction base="int">
+            <minExclusive value="100"/>
+            <maxExclusive value="1500"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Multiplying">
+        <restriction base="string">
+            <enumeration value="Leaf"/>
+            <enumeration value="Seed"/>
+            <enumeration value="Stalk"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Soil">
+        <restriction base="string">
+            <enumeration value="Limestone"/>
+            <enumeration value="Turfy"/>
+            <enumeration value="Humus"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="TemperatureCut">
+        <restriction base="double">
+            <minExclusive value="3"/>
+            <maxExclusive value="14"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="StemLength">
+        <restriction base="double">
+            <minExclusive value="1"/>
+            <maxExclusive value="100"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Title">
+        <restriction base="string">
+            <pattern value="[a-zA-Z ]{2,50}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Origin">
+        <restriction base="string">
+            <enumeration value="South_America"/>
+            <enumeration value="North_America"/>
+            <enumeration value="Africa"/>
+            <enumeration value="Australia"/>
+            <enumeration value="Europe"/>
+            <enumeration value="Asia"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Color">
+        <restriction base="string">
+            <enumeration value="White"/>
+            <enumeration value="Red"/>
+            <enumeration value="Green"/>
+            <enumeration value="Blue"/>
+            <enumeration value="Yellow"/>
+            <enumeration value="Orange"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="VendorCode">
+        <restriction base="ID">
+            <pattern value="[A-Z]\d{4}"/>
+        </restriction>
+    </simpleType>
+
+</schema>

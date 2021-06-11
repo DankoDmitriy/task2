@@ -9,10 +9,10 @@ public class ExoticFlower extends Flower {
     private double temperature;
     private boolean photophilous;
 
-    public ExoticFlower() {
+    private ExoticFlower() {
     }
 
-    public ExoticFlower(Soil soil, Multiplying multiplying, int watering, double temperature, boolean photophilous) {
+    private ExoticFlower(Soil soil, Multiplying multiplying, int watering, double temperature, boolean photophilous) {
         this.soil = soil;
         this.multiplying = multiplying;
         this.watering = watering;
@@ -69,43 +69,6 @@ public class ExoticFlower extends Flower {
         this.photophilous = photophilous;
     }
 
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (!super.equals(obj)) {
-//            return false;
-//        }
-//        ExoticFlower objExoticFlower = (ExoticFlower) obj;
-//        if (soil == null) {
-//            if (objExoticFlower.soil != null) {
-//                return false;
-//            }
-//        } else if (!soil.equals(objExoticFlower.soil)) {
-//            return false;
-//        }
-//
-//        if (multiplying == null) {
-//            if (objExoticFlower.multiplying != null) {
-//                return false;
-//            }
-//        } else if (!multiplying.equals(objExoticFlower.multiplying)) {
-//            return false;
-//        }
-//
-//        if (watering != objExoticFlower.watering) {
-//            return false;
-//        }
-//
-//        if (temperature != objExoticFlower.temperature) {
-//            return false;
-//        }
-//
-//        if (photophilous != objExoticFlower.photophilous) {
-//            return false;
-//        }
-//        return true;
-//    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -135,13 +98,79 @@ public class ExoticFlower extends Flower {
     }
 
     @Override
-    public String toString() { //fixme: make other version
+    public String toString() {
         return "ExoticFlower{" +
                 "soil=" + soil +
                 ", multiplying=" + multiplying +
                 ", watering=" + watering +
                 ", temperature=" + temperature +
                 ", photophilous=" + photophilous +
-                '}';
+                "} " + super.toString();
+    }
+
+    public static ExoticFlowerBuilder builder() {
+        return new ExoticFlowerBuilder();
+    }
+
+    public static class ExoticFlowerBuilder {
+        private ExoticFlower exoticFlower;
+
+        public ExoticFlowerBuilder() {
+            exoticFlower = new ExoticFlower();
+        }
+
+        public ExoticFlowerBuilder titleSet(String title) {
+            exoticFlower.setTitle(title);
+            return this;
+        }
+
+        public ExoticFlowerBuilder vendorCodeSet(String vendorCode) {
+            exoticFlower.setVendorCode(vendorCode);
+            return this;
+        }
+
+        public ExoticFlowerBuilder originSet(Origin origin) {
+            exoticFlower.setOrigin(origin);
+            return this;
+        }
+
+        public ExoticFlowerBuilder leafColorSet(Color leafColor) {
+            exoticFlower.setLeafColor(leafColor);
+            return this;
+        }
+
+        public ExoticFlowerBuilder plantingDateSet(LocalDate plantingDate) {
+            exoticFlower.setPlantingDate(plantingDate);
+            return this;
+        }
+
+        public ExoticFlowerBuilder soilSet(Soil soil) {
+            exoticFlower.setSoil(soil);
+            return this;
+        }
+
+        public ExoticFlowerBuilder multiplyingSet(Multiplying multiplying) {
+            exoticFlower.setMultiplying(multiplying);
+            return this;
+        }
+
+        public ExoticFlowerBuilder wateringSet(int watering) {
+            exoticFlower.setWatering(watering);
+            return this;
+        }
+
+        public ExoticFlowerBuilder temperatureSet(double temperature) {
+            exoticFlower.setTemperature(temperature);
+            return this;
+        }
+
+        public ExoticFlowerBuilder photophilousSet(boolean photophilous) {
+            exoticFlower.setPhotophilous(photophilous);
+            return this;
+        }
+
+        public ExoticFlower build() {
+            return exoticFlower;
+        }
     }
 }

@@ -9,9 +9,10 @@ public class CutFlower extends Flower {
     private Color budColor;
     private boolean poisonous;
 
-    public CutFlower() {
+    private CutFlower() {
     }
-    public CutFlower(String title, String vendorCode, Origin origin, Color leafColor, LocalDate plantingDate, double temperature, LocalDate cutDate, double stemLength, Color budColor, boolean poisonous) {
+
+    private CutFlower(String title, String vendorCode, Origin origin, Color leafColor, LocalDate plantingDate, double temperature, LocalDate cutDate, double stemLength, Color budColor, boolean poisonous) {
         super(title, vendorCode, origin, leafColor, plantingDate);
         this.temperature = temperature;
         this.cutDate = cutDate;
@@ -97,6 +98,72 @@ public class CutFlower extends Flower {
                 ", stemLength=" + stemLength +
                 ", budColor=" + budColor +
                 ", poisonous=" + poisonous +
-                '}';
+                "} " + super.toString();
+    }
+
+    public static CutFlowerBuilder builder() {
+        return new CutFlowerBuilder();
+    }
+
+    public static class CutFlowerBuilder { //FIXME DELETE public - this only for test
+        private CutFlower cutFlower;
+
+        private CutFlowerBuilder() {
+            cutFlower = new CutFlower();
+        }
+
+        public CutFlowerBuilder titleSet(String title) {
+            cutFlower.setTitle(title);
+            return this;
+        }
+
+        public CutFlowerBuilder vendorCodeSet(String vendorCode) {
+            cutFlower.setVendorCode(vendorCode);
+            return this;
+        }
+
+        public CutFlowerBuilder originSet(Origin origin) {
+            cutFlower.setOrigin(origin);
+            return this;
+        }
+
+        public CutFlowerBuilder leafColorSet(Color leafColor) {
+            cutFlower.setLeafColor(leafColor);
+            return this;
+        }
+
+        public CutFlowerBuilder plantingDateSet(LocalDate plantingDate) {
+            cutFlower.setPlantingDate(plantingDate);
+            return this;
+        }
+
+        public CutFlowerBuilder temperatureSet(double temperature) {
+            cutFlower.setTemperature(temperature);
+            return this;
+        }
+
+        public CutFlowerBuilder cutDateSet(LocalDate cutDate) {
+            cutFlower.setCutDate(cutDate);
+            return this;
+        }
+
+        public CutFlowerBuilder stemLengthSet(double stemLength) {
+            cutFlower.setStemLength(stemLength);
+            return this;
+        }
+
+        public CutFlowerBuilder budColorSet(Color budColor) {
+            cutFlower.setBudColor(budColor);
+            return this;
+        }
+
+        public CutFlowerBuilder poisonousSet(boolean poisonous) {
+            cutFlower.setPoisonous(poisonous);
+            return this;
+        }
+
+        public CutFlower build() {
+            return cutFlower;
+        }
     }
 }

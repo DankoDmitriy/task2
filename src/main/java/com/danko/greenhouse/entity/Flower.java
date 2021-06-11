@@ -101,7 +101,7 @@ public abstract class Flower {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //fixme
         return "Flower{" +
                 "title='" + title + '\'' +
                 ", vendorCode='" + vendorCode + '\'' +
