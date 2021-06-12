@@ -2,17 +2,17 @@ package com.danko.greenhouse.entity;
 
 import java.time.LocalDate;
 
-public abstract class Flower {
+public abstract class AbstractFlower {
     private String title;
     private String vendorCode;
     private Origin origin;
     private Color leafColor;
     private LocalDate plantingDate;
 
-    public Flower() {
+    public AbstractFlower() {
     }
 
-    public Flower(String title, String vendorCode, Origin origin, Color leafColor, LocalDate plantingDate) {
+    public AbstractFlower(String title, String vendorCode, Origin origin, Color leafColor, LocalDate plantingDate) {
         this.title = title;
         this.vendorCode = vendorCode;
         this.origin = origin;
@@ -68,7 +68,7 @@ public abstract class Flower {
         if (obj == null) {
             return false;
         }
-        Flower objFlower = (Flower) obj;
+        AbstractFlower objFlower = (AbstractFlower) obj;
         if (title == null) {
             if (objFlower.title != null) {
                 return false;
@@ -101,8 +101,8 @@ public abstract class Flower {
     }
 
     @Override
-    public String toString() { //fixme
-        return "Flower{" +
+    public String toString() { //fixme  StringBuilder stringBuilder
+        return "AbstractFlower{" +
                 "title='" + title + '\'' +
                 ", vendorCode='" + vendorCode + '\'' +
                 ", origin=" + origin +
@@ -110,5 +110,9 @@ public abstract class Flower {
                 ", plantingDate=" + plantingDate +
                 '}';
     }
-    //todo hashCode
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

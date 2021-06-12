@@ -20,7 +20,7 @@ public enum FlowerXmlTag {
     TEMPERATURE_EXOTIC_FLOWER,
     PHOTOPHILOUS;
 
-    public String getTagName() {
+    public String tagName() {
         return name().replace("_", "-").toLowerCase();
     }
 }

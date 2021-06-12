@@ -2,7 +2,7 @@ package com.danko.greenhouse.entity;
 
 import java.time.LocalDate;
 
-public class ExoticFlower extends Flower {
+public class ExoticFlower extends AbstractFlower {
     private Soil soil;
     private Multiplying multiplying;
     private int watering;
@@ -98,7 +98,7 @@ public class ExoticFlower extends Flower {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //foxme  StringBuilder stringBuilder
         return "ExoticFlower{" +
                 "soil=" + soil +
                 ", multiplying=" + multiplying +
@@ -108,63 +108,63 @@ public class ExoticFlower extends Flower {
                 "} " + super.toString();
     }
 
-    public static ExoticFlowerBuilder builder() {
-        return new ExoticFlowerBuilder();
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public static class ExoticFlowerBuilder {
+    public static class Builder {
         private ExoticFlower exoticFlower;
 
-        public ExoticFlowerBuilder() {
+        public Builder() {
             exoticFlower = new ExoticFlower();
         }
 
-        public ExoticFlowerBuilder titleSet(String title) {
+        public Builder titleSet(String title) {
             exoticFlower.setTitle(title);
             return this;
         }
 
-        public ExoticFlowerBuilder vendorCodeSet(String vendorCode) {
+        public Builder vendorCodeSet(String vendorCode) {
             exoticFlower.setVendorCode(vendorCode);
             return this;
         }
 
-        public ExoticFlowerBuilder originSet(Origin origin) {
+        public Builder originSet(Origin origin) {
             exoticFlower.setOrigin(origin);
             return this;
         }
 
-        public ExoticFlowerBuilder leafColorSet(Color leafColor) {
+        public Builder leafColorSet(Color leafColor) {
             exoticFlower.setLeafColor(leafColor);
             return this;
         }
 
-        public ExoticFlowerBuilder plantingDateSet(LocalDate plantingDate) {
+        public Builder plantingDateSet(LocalDate plantingDate) {
             exoticFlower.setPlantingDate(plantingDate);
             return this;
         }
 
-        public ExoticFlowerBuilder soilSet(Soil soil) {
+        public Builder soilSet(Soil soil) {
             exoticFlower.setSoil(soil);
             return this;
         }
 
-        public ExoticFlowerBuilder multiplyingSet(Multiplying multiplying) {
+        public Builder multiplyingSet(Multiplying multiplying) {
             exoticFlower.setMultiplying(multiplying);
             return this;
         }
 
-        public ExoticFlowerBuilder wateringSet(int watering) {
+        public Builder wateringSet(int watering) {
             exoticFlower.setWatering(watering);
             return this;
         }
 
-        public ExoticFlowerBuilder temperatureSet(double temperature) {
+        public Builder temperatureSet(double temperature) {
             exoticFlower.setTemperature(temperature);
             return this;
         }
 
-        public ExoticFlowerBuilder photophilousSet(boolean photophilous) {
+        public Builder photophilousSet(boolean photophilous) {
             exoticFlower.setPhotophilous(photophilous);
             return this;
         }

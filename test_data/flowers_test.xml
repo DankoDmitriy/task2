@@ -74,14 +74,6 @@
         <bud-color>White</bud-color>
         <temperature-cut>13</temperature-cut>
     </cut-flower>
-    <cut-flower vendor-code="C0010" planting-date="2020-02-01" cut-date="2021-03-08">
-        <title>Lily of the Valley Asia Red</title>
-        <origin>Asia</origin>
-        <leaf-color>Red</leaf-color>
-        <stem-length>32</stem-length>
-        <bud-color>White</bud-color>
-        <temperature-cut>13</temperature-cut>
-    </cut-flower>
     <exotic-flower vendor-code="E0001" planting-date="2015-01-01">
         <title>North American rose</title>
         <origin>North_America</origin>
@@ -92,6 +84,14 @@
         <temperature-exotic-flower>33</temperature-exotic-flower>
         <photophilous>true</photophilous>
     </exotic-flower>
+    <cut-flower vendor-code="C0010" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley Asia Red</title>
+        <origin>Asia</origin>
+        <leaf-color>Red</leaf-color>
+        <stem-length>32</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
     <exotic-flower vendor-code="E0002" planting-date="2018-01-01">
         <title>South America rose</title>
         <origin>South_America</origin>
@@ -102,7 +102,7 @@
         <temperature-exotic-flower>29</temperature-exotic-flower>
         <photophilous>false</photophilous>
     </exotic-flower>
-    <exotic-flower vendor-code="1E0003" planting-date="2011-01-01">
+    <exotic-flower vendor-code="E0003" planting-date="2011-01-01">
         <title>Asia rose Blue</title>
         <origin>Asia</origin>
         <leaf-color>Green</leaf-color>

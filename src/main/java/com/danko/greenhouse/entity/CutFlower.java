@@ -2,7 +2,7 @@ package com.danko.greenhouse.entity;
 
 import java.time.LocalDate;
 
-public class CutFlower extends Flower {
+public class CutFlower extends AbstractFlower {
     private double temperature;
     private LocalDate cutDate;
     private double stemLength;
@@ -91,7 +91,7 @@ public class CutFlower extends Flower {
     }
 
     @Override
-    public String toString() {
+    public String toString() {//FIXME  StringBuilder stringBuilder
         return "CutFlower{" +
                 "temperature=" + temperature +
                 ", cutDate=" + cutDate +
@@ -101,63 +101,63 @@ public class CutFlower extends Flower {
                 "} " + super.toString();
     }
 
-    public static CutFlowerBuilder builder() {
-        return new CutFlowerBuilder();
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public static class CutFlowerBuilder { //FIXME DELETE public - this only for test
+    public static class Builder { //FIXME DELETE public - this only for test
         private CutFlower cutFlower;
 
-        private CutFlowerBuilder() {
+        private Builder() {
             cutFlower = new CutFlower();
         }
 
-        public CutFlowerBuilder titleSet(String title) {
+        public Builder titleSet(String title) {
             cutFlower.setTitle(title);
             return this;
         }
 
-        public CutFlowerBuilder vendorCodeSet(String vendorCode) {
+        public Builder vendorCodeSet(String vendorCode) {
             cutFlower.setVendorCode(vendorCode);
             return this;
         }
 
-        public CutFlowerBuilder originSet(Origin origin) {
+        public Builder originSet(Origin origin) {
             cutFlower.setOrigin(origin);
             return this;
         }
 
-        public CutFlowerBuilder leafColorSet(Color leafColor) {
+        public Builder leafColorSet(Color leafColor) {
             cutFlower.setLeafColor(leafColor);
             return this;
         }
 
-        public CutFlowerBuilder plantingDateSet(LocalDate plantingDate) {
+        public Builder plantingDateSet(LocalDate plantingDate) {
             cutFlower.setPlantingDate(plantingDate);
             return this;
         }
 
-        public CutFlowerBuilder temperatureSet(double temperature) {
+        public Builder temperatureSet(double temperature) {
             cutFlower.setTemperature(temperature);
             return this;
         }
 
-        public CutFlowerBuilder cutDateSet(LocalDate cutDate) {
+        public Builder cutDateSet(LocalDate cutDate) {
             cutFlower.setCutDate(cutDate);
             return this;
         }
 
-        public CutFlowerBuilder stemLengthSet(double stemLength) {
+        public Builder stemLengthSet(double stemLength) {
             cutFlower.setStemLength(stemLength);
             return this;
         }
 
-        public CutFlowerBuilder budColorSet(Color budColor) {
+        public Builder budColorSet(Color budColor) {
             cutFlower.setBudColor(budColor);
             return this;
         }
 
-        public CutFlowerBuilder poisonousSet(boolean poisonous) {
+        public Builder poisonousSet(boolean poisonous) {
             cutFlower.setPoisonous(poisonous);
             return this;
         }

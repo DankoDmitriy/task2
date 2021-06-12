@@ -14,7 +14,7 @@ import javax.xml.validation.Validator;
 import java.io.IOException;
 
 public class FlowerXmlAndXsdValidator {
-    private final static Logger LOGGER = LogManager.getLogger();
+    public static Logger logger = LogManager.getLogger();
 
     public static boolean xmlAndXsdValid(String pathToXmlFile, String pathToXsdSchema) {
         boolean result = false;
@@ -31,9 +31,9 @@ public class FlowerXmlAndXsdValidator {
             validator.validate(xmlSource);
             result = true;
         } catch (SAXException e) {
-            LOGGER.log(Level.WARN, "File XML or XSD are not valid" + e.toString());
+            logger.log(Level.ERROR, "File XML or XSD are not valid" + e.toString());
         } catch (IOException e) {
-            LOGGER.log(Level.WARN, "File XML or XSD are not valid" + e.toString());
+            logger.log(Level.ERROR, "File XML or XSD are not valid" + e.toString());
         }
         return result;
     }
