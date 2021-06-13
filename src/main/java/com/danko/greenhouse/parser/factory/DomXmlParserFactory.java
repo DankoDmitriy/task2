@@ -1,4 +1,4 @@
-package com.danko.greenhouse.parser.Factory;
+package com.danko.greenhouse.parser.factory;
 
 import com.danko.greenhouse.parser.DomXmlParser;
 import com.danko.greenhouse.parser.XmlParser;
