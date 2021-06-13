@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SaxXmlParser {
+public class SaxXmlParser implements XmlParser {
 
     public static Logger logger = LogManager.getLogger();
     private SAXParserFactory factory;

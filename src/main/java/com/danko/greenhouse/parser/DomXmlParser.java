@@ -22,7 +22,7 @@ import java.util.Set;
 
 import static com.danko.greenhouse.parser.FlowerXmlTag.*;
 
-public class DomXmlParser {
+public class DomXmlParser implements XmlParser {
     private static Logger logger = LogManager.getLogger();
     private static final String HYPHEN = "-";
     private static final String UNDERSCORE = "_";

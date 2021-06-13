@@ -25,7 +25,7 @@ import java.util.Set;
 
 import static com.danko.greenhouse.parser.FlowerXmlTag.*;
 
-public class StaxXmlParser {
+public class StaxXmlParser implements XmlParser {
     public static Logger logger = LogManager.getLogger();
     private static final String HYPHEN = "-";
     private static final String UNDERSCORE = "_";
