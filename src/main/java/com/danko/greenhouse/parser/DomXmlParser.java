@@ -1,6 +1,7 @@
 package com.danko.greenhouse.parser;
 
 import com.danko.greenhouse.entity.*;
+import com.danko.greenhouse.exception.FlowerException;
 import com.danko.greenhouse.validator.CustomFileValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -19,12 +20,12 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.danko.greenhouse.entity.FlowerXmlTag.*;
+import static com.danko.greenhouse.parser.FlowerXmlTag.*;
 
 public class DomXmlParser {
-    public static Logger logger = LogManager.getLogger();
-    public static final String HYPHEN = "-";
-    public static final String UNDERSCORE = "_";
+    private static Logger logger = LogManager.getLogger();
+    private static final String HYPHEN = "-";
+    private static final String UNDERSCORE = "_";
 
     private DocumentBuilderFactory documentBuilderFactory;
     private DocumentBuilder documentBuilder;
@@ -42,30 +43,26 @@ public class DomXmlParser {
         }
     }
 
-    public Set<AbstractFlower> parserXml(String fileAddress) {
+    public Set<AbstractFlower> parserXml(String fileAddress) throws FlowerException {
         Document document = null;
         if (!CustomFileValidator.isFileValidation(fileAddress)) {
             logger.log(Level.ERROR, "File can not valid ...");
-            throw new RuntimeException("File can not valid ...");
+            throw new FlowerException("File can not valid ...");
         }
         try {
             document = documentBuilder.parse(fileAddress);
             Element root = document.getDocumentElement();
 
-            logger.log(Level.DEBUG, "Has been started parsing Cut-Flowers");
+            logger.log(Level.DEBUG, "DOM parser has been started...");
             NodeList cutFlowersList = root.getElementsByTagName(FlowerXmlTag.CUT_FLOWER.tagName());
             parserNodeList(cutFlowersList, FlowerXmlTag.CUT_FLOWER.tagName());
-            logger.log(Level.DEBUG, "Has been finished parsing CutFlowers");
 
-            logger.log(Level.DEBUG, "Has been started parsing ExoticFlowers");
             NodeList exoticFlowersList = root.getElementsByTagName(FlowerXmlTag.EXOTIC_FLOWER.tagName());
             parserNodeList(exoticFlowersList, FlowerXmlTag.EXOTIC_FLOWER.tagName());
-            logger.log(Level.DEBUG, "Has been finished parsing ExoticFlowers");
-
-        } catch (IOException e) {
-            logger.log(Level.ERROR, "File ERROR or I/O error" + e);
-        } catch (SAXException e) {
-            logger.log(Level.ERROR, "Parsing failure" + e);
+            logger.log(Level.DEBUG, "DOM parser has been finished. Flowers has been made.");
+        } catch (IOException | SAXException e) {
+            logger.log(Level.ERROR, "Parsing failure..." + e);
+            throw new FlowerException("Parsing failure...");
         }
         return flowers;
     }

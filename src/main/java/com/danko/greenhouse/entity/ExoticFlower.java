@@ -98,14 +98,16 @@ public class ExoticFlower extends AbstractFlower {
     }
 
     @Override
-    public String toString() { //foxme  StringBuilder stringBuilder
-        return "ExoticFlower{" +
-                "soil=" + soil +
-                ", multiplying=" + multiplying +
-                ", watering=" + watering +
-                ", temperature=" + temperature +
-                ", photophilous=" + photophilous +
-                "} " + super.toString();
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ExoticFlower{");
+        sb.append("soil=").append(soil);
+        sb.append(", multiplying=").append(multiplying);
+        sb.append(", watering=").append(watering);
+        sb.append(", temperature=").append(temperature);
+        sb.append(", photophilous=").append(photophilous);
+        sb.append('}');
+        sb.append(" ").append(super.toString());
+        return sb.toString();
     }
 
     public static Builder builder() {

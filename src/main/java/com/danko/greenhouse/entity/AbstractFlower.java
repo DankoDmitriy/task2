@@ -101,14 +101,15 @@ public abstract class AbstractFlower {
     }
 
     @Override
-    public String toString() { //fixme  StringBuilder stringBuilder
-        return "AbstractFlower{" +
-                "title='" + title + '\'' +
-                ", vendorCode='" + vendorCode + '\'' +
-                ", origin=" + origin +
-                ", leafColor=" + leafColor +
-                ", plantingDate=" + plantingDate +
-                '}';
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AbstractFlower{");
+        sb.append("title='").append(title).append('\'');
+        sb.append(", vendorCode='").append(vendorCode).append('\'');
+        sb.append(", origin=").append(origin);
+        sb.append(", leafColor=").append(leafColor);
+        sb.append(", plantingDate=").append(plantingDate);
+        sb.append('}');
+        return sb.toString();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.danko.greenhouse.entity;
+package com.danko.greenhouse.parser;
 
 public enum FlowerXmlTag {
     FLOWERS,

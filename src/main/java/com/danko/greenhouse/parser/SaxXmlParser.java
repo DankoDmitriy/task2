@@ -1,6 +1,7 @@
 package com.danko.greenhouse.parser;
 
 import com.danko.greenhouse.entity.AbstractFlower;
+import com.danko.greenhouse.exception.FlowerException;
 import com.danko.greenhouse.validator.CustomFileValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -35,14 +36,19 @@ public class SaxXmlParser {
         }
     }
 
-    public Set<AbstractFlower> parserXml(String xmlFile) throws IOException, SAXException {
+    public Set<AbstractFlower> parserXml(String xmlFile) throws FlowerException {
         if (!CustomFileValidator.isFileValidation(xmlFile)) {
             logger.log(Level.ERROR, "File can not valid...");
-            throw new RuntimeException("File can not valid ...");
+            throw new FlowerException("File can not valid ...");
         }
         FlowerHandler flowerHandler = new FlowerHandler();
         flowerHandler.setFlowers(flowers);
-        parser.parse(new File(xmlFile), flowerHandler);
+        try {
+            parser.parse(new File(xmlFile), flowerHandler);
+        } catch (SAXException | IOException e) {
+            logger.log(Level.ERROR, "File can not valid...");
+            throw new FlowerException("File can not valid...");
+        }
         return flowers;
     }
 }

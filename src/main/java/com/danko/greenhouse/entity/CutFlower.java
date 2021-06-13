@@ -91,14 +91,16 @@ public class CutFlower extends AbstractFlower {
     }
 
     @Override
-    public String toString() {//FIXME  StringBuilder stringBuilder
-        return "CutFlower{" +
-                "temperature=" + temperature +
-                ", cutDate=" + cutDate +
-                ", stemLength=" + stemLength +
-                ", budColor=" + budColor +
-                ", poisonous=" + poisonous +
-                "} " + super.toString();
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("CutFlower{");
+        sb.append("temperature=").append(temperature);
+        sb.append(", cutDate=").append(cutDate);
+        sb.append(", stemLength=").append(stemLength);
+        sb.append(", budColor=").append(budColor);
+        sb.append(", poisonous=").append(poisonous);
+        sb.append('}');
+        sb.append(" ").append(super.toString());
+        return sb.toString();
     }
 
     public static Builder builder() {

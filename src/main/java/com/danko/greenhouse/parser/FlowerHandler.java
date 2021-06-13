@@ -1,6 +1,7 @@
 package com.danko.greenhouse.parser;
 
 import com.danko.greenhouse.entity.*;
+import com.danko.greenhouse.exception.FlowerException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,12 +12,12 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.time.LocalDate;
 import java.util.Set;
 
-import static com.danko.greenhouse.entity.FlowerXmlTag.*;
+import static com.danko.greenhouse.parser.FlowerXmlTag.*;
 
 public class FlowerHandler extends DefaultHandler {
-    public static Logger logger = LogManager.getLogger();
-    public static final String HYPHEN = "-";
-    public static final String UNDERSCORE = "_";
+    private static Logger logger = LogManager.getLogger();
+    private static final String HYPHEN = "-";
+    private static final String UNDERSCORE = "_";
 
     private Set<AbstractFlower> flowers;
     private CutFlower.Builder cutBuilder;
@@ -29,18 +30,17 @@ public class FlowerHandler extends DefaultHandler {
     @Override
     public void startDocument() throws SAXException {
         super.startDocument();
-        logger.log(Level.INFO, "SaxXmlParser has been started parsing Flowers.");
+        logger.log(Level.INFO, "SAX parser has been started...");
     }
 
     @Override
     public void endDocument() throws SAXException {
         super.endDocument();
-        logger.log(Level.INFO, "SaxXmlParser has been finished parsing Flowers.");
+        logger.log(Level.INFO, "SAX parser has been finished. Flowers has been made.");
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        super.startElement(uri, localName, qName, attributes);
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         FlowerXmlTag enumTag = FlowerXmlTag.valueOf(tagToEnum(qName));
         switch (enumTag) {
             case CUT_FLOWER:
@@ -60,8 +60,7 @@ public class FlowerHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        super.endElement(uri, localName, qName);
+    public void endElement(String uri, String localName, String qName) {
         FlowerXmlTag enumTag = FlowerXmlTag.valueOf(tagToEnum(qName));
         switch (enumTag) {
             case CUT_FLOWER:
