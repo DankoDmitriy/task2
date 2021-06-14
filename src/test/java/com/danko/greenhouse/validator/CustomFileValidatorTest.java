@@ -10,32 +10,32 @@ public class CustomFileValidatorTest {
     public static final String NOT_CORRECT_FILE = "test_data\\flowers_test_empty.xml";
 
     @Test
-    public void testPositiveExistIsFileValidation() {
-        boolean result = CustomFileValidator.isFileValidation(CORRECT_FILE);
+    public void testPositiveExistIsFileValid() {
+        boolean result = CustomFileValidator.isFileValid(CORRECT_FILE);
         assertTrue(result);
     }
 
     @Test
-    public void testNegativeExistIsFileValidation() {
-        boolean result = CustomFileValidator.isFileValidation(NOT_CORRECT_FILE);
+    public void testNegativeExistIsFileValid() {
+        boolean result = CustomFileValidator.isFileValid(NOT_CORRECT_FILE);
         assertFalse(result);
     }
 
     @Test
-    public void testNegativePathIsFileValidation() {
-        boolean result = CustomFileValidator.isFileValidation(null);
+    public void testNegativePathIsFileValid() {
+        boolean result = CustomFileValidator.isFileValid(null);
         assertFalse(result);
     }
 
     @Test
-    public void testPositiveIsFileIsFileValidation() {
-        boolean result = CustomFileValidator.isFileValidation(CORRECT_FILE);
+    public void testPositiveIsFileIsFileValid() {
+        boolean result = CustomFileValidator.isFileValid(CORRECT_FILE);
         assertTrue(result);
     }
 
     @Test
-    public void testNegativeIsFileIsFileValidation() {
-        boolean result = CustomFileValidator.isFileValidation(NOT_CORRECT_FILE);
+    public void testNegativeIsFileIsFileValid() {
+        boolean result = CustomFileValidator.isFileValid(NOT_CORRECT_FILE);
         assertFalse(result);
     }
 }

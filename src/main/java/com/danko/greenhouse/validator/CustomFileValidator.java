@@ -3,7 +3,7 @@ package com.danko.greenhouse.validator;
 import java.io.File;
 
 public class CustomFileValidator {
-    public static boolean isFileValidation(String fileAddress) {
+    public static boolean isFileValid(String fileAddress) {
         if (fileAddress == null) {
             return false;
         }

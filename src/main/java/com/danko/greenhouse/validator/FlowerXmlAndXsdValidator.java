@@ -11,7 +11,6 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
-import java.io.File;
 import java.io.IOException;
 
 public class FlowerXmlAndXsdValidator {
@@ -19,7 +18,7 @@ public class FlowerXmlAndXsdValidator {
 
     public static boolean xmlAndXsdValid(String pathToXmlFile, String pathToXsdSchema) {
         boolean result = false;
-        if (!(CustomFileValidator.isFileValidation(pathToXmlFile) && CustomFileValidator.isFileValidation(pathToXsdSchema))) {
+        if (!(CustomFileValidator.isFileValid(pathToXmlFile) && CustomFileValidator.isFileValid(pathToXsdSchema))) {
             return result;
         }
         String schemaNameSpace = XMLConstants.W3C_XML_SCHEMA_NS_URI;

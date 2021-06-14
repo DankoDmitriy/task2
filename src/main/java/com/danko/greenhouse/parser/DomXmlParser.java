@@ -45,7 +45,7 @@ public class DomXmlParser implements XmlParser {
 
     public Set<AbstractFlower> parserXml(String fileAddress) throws FlowerException {
         Document document = null;
-        if (!CustomFileValidator.isFileValidation(fileAddress)) {
+        if (!CustomFileValidator.isFileValid(fileAddress)) {
             logger.log(Level.ERROR, "File can not valid ...");
             throw new FlowerException("File can not valid ...");
         }

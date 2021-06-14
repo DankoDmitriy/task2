@@ -37,7 +37,7 @@ public class SaxXmlParser implements XmlParser {
     }
 
     public Set<AbstractFlower> parserXml(String xmlFile) throws FlowerException {
-        if (!CustomFileValidator.isFileValidation(xmlFile)) {
+        if (!CustomFileValidator.isFileValid(xmlFile)) {
             logger.log(Level.ERROR, "File can not valid...");
             throw new FlowerException("File can not valid ...");
         }
