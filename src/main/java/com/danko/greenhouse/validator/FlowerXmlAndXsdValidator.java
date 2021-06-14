@@ -11,6 +11,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
+import java.io.File;
 import java.io.IOException;
 
 public class FlowerXmlAndXsdValidator {
@@ -30,11 +31,10 @@ public class FlowerXmlAndXsdValidator {
             Validator validator = schema.newValidator();
             validator.validate(xmlSource);
             result = true;
-        } catch (SAXException e) {
-            logger.log(Level.ERROR, "File XML or XSD are not valid" + e.toString());
-        } catch (IOException e) {
+        } catch (SAXException | IOException e) {
             logger.log(Level.ERROR, "File XML or XSD are not valid" + e.toString());
         }
         return result;
+
     }
 }

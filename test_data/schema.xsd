@@ -99,7 +99,7 @@
 
     <simpleType name="Title">
         <restriction base="string">
-            <pattern value="[a-zA-Z ]{2,50}"/>
+            <pattern value="[a-zA-Z ]{2,70}"/>
         </restriction>
     </simpleType>
 
