@@ -35,6 +35,5 @@ public class FlowerXmlAndXsdValidator {
             logger.log(Level.ERROR, "File XML or XSD are not valid" + e.toString());
         }
         return result;
-
     }
 }
