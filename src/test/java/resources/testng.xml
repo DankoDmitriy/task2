@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="XML Parsers Test" verbose="1">
+    <test name="Test all parsers">
+        <classes>
+            <class name="com.danko.greenhouse.parser.XmlParserTest"/>
+        </classes>
+    </test>
+
+    <test name="File validator test">
+        <classes>
+            <class name="com.danko.greenhouse.validator.CustomFileValidatorTest"/>
+        </classes>
+    </test>
+
+    <test name="Flower Xml file and XDS test">
+        <classes>
+            <class name="com.danko.greenhouse.validator.FlowerXmlAndXsdValidatorTest"/>
+        </classes>
+    </test>
+
+</suite>
