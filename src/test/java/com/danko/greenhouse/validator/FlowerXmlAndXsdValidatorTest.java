@@ -11,13 +11,13 @@ public class FlowerXmlAndXsdValidatorTest {
     public static final String SCHEMA_XSD = "test_data\\schema.xsd";
 
     @Test
-    public void positiveCorrectXmlFile() {
+    public void testPositiveCorrectXmlFile() {
         boolean result = FlowerXmlAndXsdValidator.xmlAndXsdValid(CORRECT_XML_FILE, SCHEMA_XSD);
         assertTrue(result);
     }
 
     @Test
-    public void negativeCorrectXmlFile() {
+    public void testNegativeCorrectXmlFile() {
         boolean result = FlowerXmlAndXsdValidator.xmlAndXsdValid(NOT_CORRECT_XML_FILE, SCHEMA_XSD);
         assertFalse(result);
     }

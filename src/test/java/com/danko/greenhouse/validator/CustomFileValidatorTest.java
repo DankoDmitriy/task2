@@ -10,31 +10,31 @@ public class CustomFileValidatorTest {
     public static final String NOT_CORRECT_FILE = "test_data\\flowers_test_empty.xml";
 
     @Test
-    public void positiveExistIsFileValidation() {
+    public void testPositiveExistIsFileValidation() {
         boolean result = CustomFileValidator.isFileValidation(CORRECT_FILE);
         assertTrue(result);
     }
 
     @Test
-    public void negativeExistIsFileValidation() {
+    public void testNegativeExistIsFileValidation() {
         boolean result = CustomFileValidator.isFileValidation(NOT_CORRECT_FILE);
         assertFalse(result);
     }
 
     @Test
-    public void negativePathIsFileValidation() {
+    public void testNegativePathIsFileValidation() {
         boolean result = CustomFileValidator.isFileValidation(null);
         assertFalse(result);
     }
 
     @Test
-    public void positiveIsFileIsFileValidation() {
+    public void testPositiveIsFileIsFileValidation() {
         boolean result = CustomFileValidator.isFileValidation(CORRECT_FILE);
         assertTrue(result);
     }
 
     @Test
-    public void negativeIsFileIsFileValidation() {
+    public void testNegativeIsFileIsFileValidation() {
         boolean result = CustomFileValidator.isFileValidation(NOT_CORRECT_FILE);
         assertFalse(result);
     }

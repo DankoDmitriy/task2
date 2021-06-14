@@ -30,7 +30,7 @@ public class XmlParserTest {
     }
 
     @Test(dataProvider = "makeParse")
-    public void positiveCountParserTest(XmlParserFactory factory) throws Exception {
+    public void testPositiveCountParser(XmlParserFactory factory) throws Exception {
         Set<AbstractFlower> flowers = new HashSet<>();
         XmlParser parser = factory.newParser();
         flowers = parser.parserXml(CORRECT_XML_FILE);
@@ -39,7 +39,7 @@ public class XmlParserTest {
     }
 
     @Test(dataProvider = "makeParse")
-    public void positiveExceptionParseTest(XmlParserFactory factory) {
+    public void testPositiveExceptionParse(XmlParserFactory factory) {
         XmlParser parser = factory.newParser();
         assertThrows(FlowerException.class, () -> parser.parserXml(NOT_CORRECT_XML_FILE));
     }
