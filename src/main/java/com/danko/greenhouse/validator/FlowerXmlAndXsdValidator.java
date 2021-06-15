@@ -14,7 +14,7 @@ import javax.xml.validation.Validator;
 import java.io.IOException;
 
 public class FlowerXmlAndXsdValidator {
-    public static Logger logger = LogManager.getLogger();
+    private static Logger logger = LogManager.getLogger();
 
     public static boolean xmlAndXsdValid(String pathToXmlFile, String pathToXsdSchema) {
         boolean result = false;

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="urn:com.danko.greenhouse"
+         xsi:schemaLocation="urn:com.danko.greenhouse schema.xsd">
+    <cut-flower vendor-code="1C0001" planting-date="2020-10-01" cut-date="2021-06-01" poisonous="true">
+        <title>African lily of the valley</title>
+        <origin>Africa</origin>
+        <leaf-color>Green</leaf-color>
+        <stem-length>16</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>8</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0002" planting-date="2019-10-01" cut-date="2021-06-03">
+        <title>Lily of the valley European</title>
+        <origin>Europe</origin>
+        <leaf-color>Orange</leaf-color>
+        <stem-length>6</stem-length>
+        <bud-color>Red</bud-color>
+        <temperature-cut>12</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0003" planting-date="2019-10-01" cut-date="2021-06-03" poisonous="true">
+        <title>Lily of the valley asian red</title>
+        <origin>Asia</origin>
+        <leaf-color>Yellow</leaf-color>
+        <stem-length>10</stem-length>
+        <bud-color>Red</bud-color>
+        <temperature-cut>9</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0004" planting-date="2020-01-01" cut-date="2021-03-08">
+        <title>Lily of the valley australian blue</title>
+        <origin>Australia</origin>
+        <leaf-color>Blue</leaf-color>
+        <stem-length>12</stem-length>
+        <bud-color>Blue</bud-color>
+        <temperature-cut>11</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0005" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley South American White</title>
+        <origin>South_America</origin>
+        <leaf-color>White</leaf-color>
+        <stem-length>17</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>10</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0006" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley South American Red</title>
+        <origin>South_America</origin>
+        <leaf-color>Red</leaf-color>
+        <stem-length>17</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0007" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley South American Blue</title>
+        <origin>South_America</origin>
+        <leaf-color>Green</leaf-color>
+        <stem-length>17</stem-length>
+        <bud-color>Blue</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0008" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley South American Yellow</title>
+        <origin>South_America</origin>
+        <leaf-color>Yellow</leaf-color>
+        <stem-length>17</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0009" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley Asia Yellow</title>
+        <origin>Asia</origin>
+        <leaf-color>Yellow</leaf-color>
+        <stem-length>17</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
+    <cut-flower vendor-code="C0010" planting-date="2020-02-01" cut-date="2021-03-08">
+        <title>Lily of the Valley Asia Red</title>
+        <origin>Asia</origin>
+        <leaf-color>Red</leaf-color>
+        <stem-length>32</stem-length>
+        <bud-color>White</bud-color>
+        <temperature-cut>13</temperature-cut>
+    </cut-flower>
+    <exotic-flower vendor-code="E0001" planting-date="2015-01-01">
+        <title>North American rose</title>
+        <origin>North_America</origin>
+        <leaf-color>Blue</leaf-color>
+        <soil>Turfy</soil>
+        <multiplying>Stalk</multiplying>
+        <watering>389</watering>
+        <temperature-exotic-flower>33</temperature-exotic-flower>
+        <photophilous>true</photophilous>
+    </exotic-flower>
+    <exotic-flower vendor-code="E0002" planting-date="2018-01-01">
+        <title>South America rose</title>
+        <origin>South_America</origin>
+        <leaf-color>Yellow</leaf-color>
+        <soil>Humus</soil>
+        <multiplying>Leaf</multiplying>
+        <watering>678</watering>
+        <temperature-exotic-flower>29</temperature-exotic-flower>
+        <photophilous>false</photophilous>
+    </exotic-flower>
+    <exotic-flower vendor-code="E0003" planting-date="2011-01-01">
+        <title>Asia rose Blue</title>
+        <origin>Asia</origin>
+        <leaf-color>Green</leaf-color>
+        <soil>Limestone</soil>
+        <multiplying>Seed</multiplying>
+        <watering>991</watering>
+        <temperature-exotic-flower>34</temperature-exotic-flower>
+        <photophilous>true</photophilous>
+    </exotic-flower>
+    <exotic-flower vendor-code="E0004" planting-date="2017-01-01">
+        <title>Australia rose Yellow</title>
+        <origin>Australia</origin>
+        <leaf-color>Green</leaf-color>
+        <soil>Turfy</soil>
+        <multiplying>Leaf</multiplying>
+        <watering>190</watering>
+        <temperature-exotic-flower>29</temperature-exotic-flower>
+        <photophilous>true</photophilous>
+    </exotic-flower>
+    <exotic-flower vendor-code="E0005" planting-date="2014-01-01">
+        <title>Europe rose Red</title>
+        <origin>Europe</origin>
+        <leaf-color>Red</leaf-color>
+        <soil>Limestone</soil>
+        <multiplying>Seed</multiplying>
+        <watering>530</watering>
+        <temperature-exotic-flower>29</temperature-exotic-flower>
+        <photophilous>true</photophilous>
+    </exotic-flower>
+    <exotic-flower vendor-code="E0006" planting-date="2021-01-01">
+        <title>Australia rose Blue</title>
+        <origin>Australia</origin>
+        <leaf-color>Blue</leaf-color>
+        <soil>Turfy</soil>
+        <multiplying>Stalk</multiplying>
+        <watering>1400</watering>
+        <temperature-exotic-flower>29</temperature-exotic-flower>
+        <photophilous>false</photophilous>
+    </exotic-flower>
+</flowers>
